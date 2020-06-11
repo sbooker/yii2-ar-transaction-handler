@@ -1,0 +1,13 @@
+image: php:7.2
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -y --no-install-recommends unzip ssh-client git-core
+          - docker-php-ext-install pcntl
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer install
+          - vendor/bin/phpunit --configuration .
