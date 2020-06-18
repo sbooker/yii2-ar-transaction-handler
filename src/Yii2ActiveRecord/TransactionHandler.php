@@ -31,7 +31,9 @@ final class TransactionHandler implements \Sbooker\TransactionManager\Transactio
 
     public function commit(): void
     {
-        $this->unitOfWork->commit();
+        if ($this->transaction->getLevel() == 1) {
+            $this->unitOfWork->commit();
+        }
         $this->transaction->commit();
         $this->clear();
     }
