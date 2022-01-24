@@ -11,7 +11,7 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.0",
+    "php": "^7.2 || ^8.0",
     "sbooker/transaction-manager": "1.1.*",
     "yiisoft/yii2": "2.0.*"
   },
