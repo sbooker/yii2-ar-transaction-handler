@@ -13,8 +13,14 @@
   "require": {
     "php": "^7.4 || ^8.0",
     "sbooker/transaction-manager": "1.1.*",
-    "yiisoft/yii2": "^2.0.41"
+    "yiisoft/yii2": "2.0.*"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Sbooker\\TransactionManager\\": "src/"
@@ -29,7 +35,10 @@
     "preferred-install": {
       "*": "dist"
     },
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
   },
   "require-dev": {
     "phpunit/phpunit": "^8.5"
