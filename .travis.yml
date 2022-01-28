@@ -15,4 +15,4 @@ install:
   - composer install
 
 script:
-  - vendor/bin/phpunit --configuration --coverage-html=build/coverage .
+  - vendor/bin/phpunit --coverage-html tests
